@@ -170,25 +170,7 @@ a:focus-visible {
 </style>
 </head>
 
-<main class="auth-container" role="main">
-<div id="auth-box" style="text-align:center;margin-top:100px;">
-  <h2>Login</h2>
-  <input id="auth-email" type="email" placeholder="Email"><br><br>
-  <button class="primary-btn" onclick="checkEmail()">Login</button>
-
-  <div id="password-box" style="display:none;">
-    <br>
-    <input id="auth-password" type="password" placeholder="Password"><br><br>
-    <button class="secondary-btn" onclick="login()">Submit</button>
-  </div>
-
-  <br><br>
-  <button class="secondary-btn" onclick="location.href='create-account.html'">Create Account</button>
-  <p id="auth-msg"></p>
-</div>
-
-<div id="app-content" style="display:none;">
-
+<body>
 
 <main class="auth-container" role="main">
   <h1>PERSONAL</h1>
@@ -226,7 +208,5 @@ document.querySelector("form").addEventListener("submit", e => {
 });
 </script>
 
-</div>
-<script type="module" src="auth.js"></script>
 </body>
 </html>
