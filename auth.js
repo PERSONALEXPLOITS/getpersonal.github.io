@@ -61,16 +61,16 @@ window.signup = async () => {
   }
 };
 
-onAuthStateChanged(auth,user=>{
-  const app=document.getElementById("app-content");
-  const box=document.getElementById("auth-box");
-  if(app && box){
-    if(user){
-      box.style.display="none";
-      app.style.display="block";
-    }else{
-      box.style.display="block";
-      app.style.display="none";
-    }
+onAuthStateChanged(auth, user => {
+  const path = window.location.pathname;
+
+  // If logged in and on login page → go to home
+  if (user && path.endsWith("index.html")) {
+    window.location.href = "home.html";
+  }
+
+  // If NOT logged in and trying to access home → go to login
+  if (!user && path.endsWith("home.html")) {
+    window.location.href = "index.html";
   }
 });
